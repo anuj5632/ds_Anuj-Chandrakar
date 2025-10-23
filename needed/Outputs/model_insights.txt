@@ -1,0 +1,34 @@
+
+=== Profitability Prediction Model Insights ===
+
+Model: Random Forest Classifier
+Number of trees: 200
+Max depth: 10
+Class weighting: Balanced
+
+Accuracy: 0.93
+F1-score (Profitable trades): 0.92
+F1-score (Unprofitable trades): 0.94
+
+Top 10 Important Features:
+           feature  importance
+    start_position    0.502390
+          side_buy    0.370600
+   execution_price    0.098426
+          size_usd    0.015269
+        sent_Greed    0.003472
+sent_Extreme Greed    0.003307
+ sent_Extreme Fear    0.002763
+         sent_Fear    0.002058
+      sent_Neutral    0.001708
+      sent_Unknown    0.000007
+
+Observations:
+- The model performs reasonably well in identifying profitable trades.
+- Class weighting helps mitigate the imbalance between profitable and unprofitable trades.
+- Features like start_position, side_buy, and execution_price have the strongest influence on predicting trade profitability.
+- Further improvements can be made by including market indicators like Fear & Greed Index, technical indicators, or rolling statistics.
+
+Recommendations:
+- Use this model to flag potentially profitable trades, but combine with domain knowledge.
+- Consider ensemble approaches or hyperparameter tuning to improve F1-score for profitable trades.
